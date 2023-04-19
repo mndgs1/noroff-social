@@ -1,0 +1,11 @@
+.post {
+  border: 1px solid #ebebeb;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.post button,
+.post a {
+  margin-left: 0.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */
