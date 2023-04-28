@@ -1,5 +1,5 @@
 import { BASE_URL, AUTHENTICATE } from "../../constants/api.js";
-import messages from "../../constants/messages.js";
+// import messages from "../../constants/messages.js";
 
 /**
  *Sends an API request to register/login user
@@ -30,12 +30,14 @@ export async function authenticateUser(data, type) {
         },
     };
 
-    try {
-        const response = await fetch(url, options);
+    const response = await fetch(url, options);
 
-        result = await response.json();
-        console.log(result);
-    } catch (error) {
-        console.log(error);
+    result = await response.json();
+    console.log(result);
+
+    if (!response.ok) {
+        console.log(result.errors[0].message);
+        throw new Error(result.errors[0].message);
     }
+    return result;
 }
