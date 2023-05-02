@@ -1,8 +1,9 @@
 import checkValidity from "../utils/validation.js";
 import setAuthenticationFormListener from "../listeners/auth/authentication.js";
+import { loginListener } from "../listeners/auth/loginListener.js";
 
 export async function loginPage() {
     checkValidity();
-    setAuthenticationFormListener("loginForm", "login");
+    loginListener();
     setAuthenticationFormListener("registerForm", "register");
 }

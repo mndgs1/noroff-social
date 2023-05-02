@@ -24,8 +24,6 @@ export default function setAuthenticationFormListener(formId, type) {
 
         const profile = Object.fromEntries(formData.entries());
 
-        console.log(profile);
-
         authenticateUser(profile, `/${type}`);
     });
 }

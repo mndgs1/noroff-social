@@ -89,3 +89,8 @@ Development process
     A CSS Framework may be used to build the application UI.
     A .gitignore file must be provided including node_modules. This folder must be untracked.
     Content posted on the API is public and associated with your identity. Be appropriate and respectful.
+
+# Resources
+
+    API Guide : https://noroff-api-docs.netlify.app/social-endpoints/authentication
+    API Documentation : https://nf-api.onrender.com/docs/static/index.html

@@ -3,7 +3,7 @@ import * as auth from "../../api/authentication/auth.js";
 import * as storage from "../../services/storage.js";
 
 export function loginListener() {
-    const form = document.querySelector("form");
+    const form = document.querySelector("#loginForm");
 
     if (form) {
         form.addEventListener("submit", handleLogin);
@@ -13,7 +13,7 @@ async function handleLogin(event) {
     event.preventDefault();
     const form = event.target;
     const data = new FormData(form);
-    const username = data.get("username");
+    const email = data.get("email");
     const password = data.get("password");
 
     const button = form.querySelector("button");
@@ -23,11 +23,11 @@ async function handleLogin(event) {
     fieldset.disabled = true;
 
     try {
-        const bodyData = { username: username, password: password };
-        const { token, firstName } = await auth.login(bodyData);
-        storage.save("token", token);
-        storage.save("name", firstName);
-        location.href = "/dashboard";
+        const bodyData = { email: email, password: password };
+        const { name, accessToken } = await auth.authenticateUser(bodyData, "/login");
+        storage.save("token", accessToken);
+        storage.save("name", name);
+        location.href = "/feed";
     } catch (error) {
         console.error(error);
         displayMessage("danger", error, "#message");

@@ -21,20 +21,20 @@
                 </div>
                 <div class="col-md-10 mx-auto col-lg-5">
                     <form class="p-4 p-md-5 border rounded-3 bg-light needs-validation" id="loginForm" novalidate>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email address:</label>
-                            <input type="email" name="email" class="form-control form-control-lg rounded-3" id="email" placeholder="" aria-label="Email address" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$" />
-                            <div class="invalid-feedback">You must use a valid student email address e.g. user123@stud.noroff.no</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password:</label>
-                            <input type="password" name="password" class="form-control form-control-lg rounded-3" id="password" placeholder="" aria-label="Password" aria-labelledby="passwordHelpInline" required minlength="8" />
-                            <div class="invalid-feedback">Password is atleast 8 characters</div>
-                        </div>
-                        <div class="checkbox mb-3">
-                            <label> <input type="checkbox" value="remember-me" /> Remember me </label>
-                        </div>
-                        <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Login</button>
+                        <fieldset>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address:</label>
+                                <input type="email" name="email" class="form-control form-control-lg rounded-3" id="email" placeholder="" aria-label="Email address" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password:</label>
+                                <input type="password" name="password" class="form-control form-control-lg rounded-3" id="password" placeholder="" aria-label="Password" aria-labelledby="passwordHelpInline" />
+                            </div>
+                            <div class="checkbox mb-3">
+                                <label> <input type="checkbox" value="remember-me" /> Remember me </label>
+                            </div>
+                            <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Login</button>
+                        </fieldset>
                         <div id="message"></div>
                         <a href="#">Forgot password?</a>
                         <hr class="my-4" />

@@ -33,7 +33,6 @@ export async function authenticateUser(data, type) {
     const response = await fetch(url, options);
 
     result = await response.json();
-    console.log(result);
 
     if (!response.ok) {
         console.log(result.errors[0].message);
