@@ -7,3 +7,7 @@ export function isLoggedIn() {
 export function getName() {
     return storage.get("name");
 }
+
+export function getToken() {
+    return storage.get("token");
+}

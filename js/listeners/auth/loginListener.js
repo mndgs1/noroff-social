@@ -24,9 +24,10 @@ async function handleLogin(event) {
 
     try {
         const bodyData = { email: email, password: password };
-        const { name, accessToken } = await auth.authenticateUser(bodyData, "/login");
+        const { name, accessToken, avatar } = await auth.authenticateUser(bodyData, "/login");
         storage.save("token", accessToken);
         storage.save("name", name);
+        storage.save("avatar", avatar);
         location.href = "/feed";
     } catch (error) {
         console.error(error);

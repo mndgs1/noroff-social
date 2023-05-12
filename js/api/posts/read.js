@@ -1,10 +1,16 @@
-import { BASE_URL } from "../../constants/api.js";
+import { BASE_URL, POST_LIMIT } from "../../constants/api.js";
 import messages from "../../constants/messages.js";
+import { getToken } from "../../helpers/storage.js";
 
-export async function getPosts(token) {
-    const url = `${BASE_URL}/posts?_author=true&_comments=true&_reactions=true`;
+export async function getPosts(offset, user) {
+    let url = `${BASE_URL}/posts?_author=true&_comments=true&_reactions=true&limit=${POST_LIMIT}&offset=${offset}`;
 
-    console.log(token);
+    if (user) {
+        url = `${BASE_URL}/profiles/${user}/posts?_author=true&_comments=true&_reactions=true&limit=${POST_LIMIT}&offset=${offset}`;
+    }
+
+    const token = getToken();
+
     const options = {
         headers: {
             Authorization: `Bearer ${token}`,
