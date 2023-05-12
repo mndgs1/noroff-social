@@ -4,5 +4,7 @@ export function searchPostsListener() {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         console.log("works");
+        const input = document.querySelector('input[type="search"]');
+        console.log(input.value);
     });
 }

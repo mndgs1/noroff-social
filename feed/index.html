@@ -50,36 +50,38 @@
                 <button class="btn btn-lg btn-primary mb-3" id="loadMorePosts">Load More Posts</button>
             </div>
         </main>
-        <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" id="createPostModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content rounded-4 shadow">
-                    <div class="modal-header p-5 pb-4 border-bottom-0">
-                        <h1 class="fw-bold mb-0 fs-2">Create Post</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
+        <div class="modals">
+            <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" id="createPostModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content rounded-4 shadow">
+                        <div class="modal-header p-5 pb-4 border-bottom-0">
+                            <h1 class="fw-bold mb-0 fs-2">Create Post</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
 
-                    <div class="modal-body p-5 pt-0">
-                        <form class="needs-validation" id="postForm" novalidate>
-                            <!--  -->
-                            <div class="mb-3">
-                                <label for="title" class="form-label">Title:</label>
-                                <input type="text" name="title" class="rounded-3 form-control form-control-lg" id="title" placeholder="" aria-label="Post title" minlength="4" required />
-                                <div class="invalid-feedback">Title must contain a character</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="postBody" class="form-label">Body:</label>
-                                <textarea name="body" class="form-control" id="postBody" rows="3"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="tags" class="form-label">Tags:</label>
-                                <input name="tags" type="text" name="tags" class="form-control form-control-lg rounded-3" id="tags" placeholder="" aria-label="Tags" />
-                            </div>
-                            <div class="mb-3">
-                                <label for="media" class="form-label">Media url:</label>
-                                <input name="media" type="text" name="media" class="form-control form-control-lg rounded-3" id="media" placeholder="" aria-label="Tags" />
-                            </div>
-                            <button class="mb-2 btn rounded-3 btn-primary" type="submit">Post</button>
-                        </form>
+                        <div class="modal-body p-5 pt-0">
+                            <form class="needs-validation" id="postForm" novalidate>
+                                <!--  -->
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Title:</label>
+                                    <input type="text" name="title" class="rounded-3 form-control form-control-lg" id="title" placeholder="" aria-label="Post title" minlength="4" required />
+                                    <div class="invalid-feedback">Title must contain a character</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="postBody" class="form-label">Body:</label>
+                                    <textarea name="body" class="form-control" id="postBody" rows="3"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="tags" class="form-label">Tags:</label>
+                                    <input name="tags" type="text" name="tags" class="form-control form-control-lg rounded-3" id="tags" placeholder="" aria-label="Tags" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="media" class="form-label">Media url:</label>
+                                    <input name="media" type="text" name="media" class="form-control form-control-lg rounded-3" id="media" placeholder="" aria-label="Tags" />
+                                </div>
+                                <button class="mb-2 btn rounded-3 btn-primary" type="submit">Post</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
