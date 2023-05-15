@@ -4,8 +4,84 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <script src="/js/index.js" defer type="module"></script>
+
+        <title>Login | Noroff</title>
+        <link href="../../css/style.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" defer integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        <script src="../../js/index.js" defer type="module"></script>
     </head>
-    <body></body>
+    <body>
+        <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+            <div class="row align-items-center g-lg-5 py-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <h1 class="display-4 fw-bold lh-1 mb-3">Vertically centered hero sign-up form</h1>
+                    <p class="col-lg-10 fs-4">
+                        Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.
+                    </p>
+                </div>
+                <div class="col-md-10 mx-auto col-lg-5">
+                    <form class="p-4 p-md-5 border rounded-3 bg-light needs-validation" id="loginForm" novalidate>
+                        <fieldset>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address:</label>
+                                <input type="email" name="email" class="form-control form-control-lg rounded-3" id="email" placeholder="" aria-label="Email address" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password:</label>
+                                <input type="password" name="password" class="form-control form-control-lg rounded-3" id="password" placeholder="" aria-label="Password" aria-labelledby="passwordHelpInline" />
+                            </div>
+                            <div class="checkbox mb-3">
+                                <label> <input type="checkbox" value="remember-me" /> Remember me </label>
+                            </div>
+                            <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Login</button>
+                        </fieldset>
+                        <div id="message"></div>
+                        <a href="#">Forgot password?</a>
+                        <hr class="my-4" />
+                        <button type="button" id="registerButton" class="btn btn-lg btn-secondary" data-bs-toggle="modal" data-bs-target="#modalSignup">Create new account</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" id="modalSignup" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content rounded-4 shadow">
+                    <div class="modal-header p-5 pb-4 border-bottom-0">
+                        <h1 class="fw-bold mb-0 fs-2">Sign up</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body p-5 pt-0">
+                        <form class="needs-validation" id="registerForm" novalidate>
+                            <!--  -->
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username:</label>
+                                <input type="text" name="name" class="rounded-3 form-control form-control-lg" id="username" placeholder="" aria-label="User name" pattern="^[\w]+$" minlength="5" required />
+                                <div class="help">Username can only contain letters & numbers and must be 5-20 characters</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address:</label>
+                                <input type="email" name="email" class="form-control form-control-lg rounded-3" id="email" placeholder="" aria-label="Email address" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$" />
+                                <div class="help">You must use a valid student email address e.g. user123@stud.noroff.no</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password:</label>
+                                <input type="password" name="password" class="form-control form-control-lg rounded-3" id="password" placeholder="" aria-label="Password" aria-labelledby="passwordHelpInline" required minlength="8" />
+                                <div class="help">Password must be between 8-20characters</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="passwordRepeat">Repeat Password:</label>
+                                <input type="password" class="form-control form-control-lg rounded-3" id="passwordRepeat" placeholder="" placeholder="" aria-label="Password" aria-labelledby="passwordHelpInline" required minlength="8" />
+                                <div class="invalid-feedback">Must match your password</div>
+                            </div>
+                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
+                            <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+                            <hr class="my-4" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

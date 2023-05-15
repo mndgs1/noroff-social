@@ -1,53 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-			crossorigin="anonymous"
-		/>
-		<link href="/css/style.css" rel="stylesheet" />
-		<title>Edit Post | Admin | Code Arrangement Example</title>
-	</head>
-	<body>
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="/">Code Arrangement</a>
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link" aria-current="page" href="/">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/admin/posts/create.html">Create</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<div class="container">
-			<h1>Edit page</h1>
-		</div>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-			crossorigin="anonymous"
-		></script>
-		<script src="/js/index.js" type="module"></script>
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+        <link href="/css/style.css" rel="stylesheet" />
+        <title>Code Arrangement Example</title>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous" defer></script>
+        <script src="/js/index.js" type="module" defer></script>
+        <script src="https://kit.fontawesome.com/57518a1e7d.js" crossorigin="anonymous" defer></script>
+    </head>
+    <body>
+        <header class="p-3 mb-3 border-bottom">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="/feed/index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none"> NOROFF </a>
+
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="#" class="nav-link px-2 link-secondary">Feed</a></li>
+                        <li><a href="#" class="nav-link px-2 link-dark">People</a></li>
+                    </ul>
+
+                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" id="searchForm">
+                        <input type="search" class="form-control" placeholder="Search..." aria-label="Search" />
+                    </form>
+
+                    <div class="dropdown text-end">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="/images/Portrait_Placeholder.png" alt="mdo" width="32" height="32" class="rounded-circle" />
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item" href="/feed/myPosts.html">My Posts</a></li>
+                            <li><a class="dropdown-item" href="#">My Profile</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" href="/profile/login/index.html" id="logoutButton">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <form class="needs-validation" id="postEditForm" novalidate>
+                    <!--  -->
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title:</label>
+                        <input type="text" name="title" class="rounded-3 form-control form-control-lg" id="title" placeholder="" aria-label="Post title" minlength="4" required />
+                        <div class="invalid-feedback">Title must contain a character</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="postBody" class="form-label">Body:</label>
+                        <textarea name="body" class="form-control" id="postBody" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tags" class="form-label">Tags:</label>
+                        <input name="tags" type="text" name="tags" class="form-control form-control-lg rounded-3" id="tags" placeholder="" aria-label="Tags" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="media" class="form-label">Media url:</label>
+                        <input name="media" type="text" name="media" class="form-control form-control-lg rounded-3" id="media" placeholder="" aria-label="Tags" />
+                    </div>
+                    <button class="mb-2 btn rounded-3 btn-primary" type="submit">Edit post</button>
+                    <button class="mb-2 btn rounded-3 btn-danger" data-delete="true" type="button">Delete post</button>
+                </form>
+            </div>
+        </main>
+    </body>
 </html>

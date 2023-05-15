@@ -10766,4 +10766,8 @@ textarea.form-control-lg {
   max-height: 100%;
 }
 
+#postsContainer > a {
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=style.css.map */

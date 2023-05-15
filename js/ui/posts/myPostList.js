@@ -1,18 +1,31 @@
 import displayMessage from "../common/displayMessage.js";
-import { getPosts } from "../../api/posts/index.js";
+import { getMyPosts } from "../../api/posts/index.js";
+import toggleLoader from "../common/toggleLoader.js";
+import toggleLoadMoreButton from "../common/toggleLoadMoreButton.js";
 
-export async function postList() {
-    try {
-        const posts = await getPosts();
-        renderPosts(posts);
-    } catch (error) {
-        console.log(error);
-        displayMessage("danger", error, ".postsContainer");
-    }
+export async function myPostList() {
+    let offset = 0;
+
+    return async function postList() {
+        const container = "#postsContainer";
+
+        try {
+            toggleLoader(container);
+            toggleLoadMoreButton();
+
+            const posts = await getMyPosts(offset);
+
+            offset = offset + 10;
+            renderPosts(posts, container);
+            toggleLoader(container);
+        } catch (error) {
+            displayMessage("danger", error, container);
+        }
+    };
 }
 
 function renderPosts(posts) {
-    const postsContainer = document.querySelector(".postsContainer");
+    const postsContainer = document.querySelector("#postsContainer");
     postsContainer.innerHTML = "";
     const postsHtml = posts.map((post) => createPost(post));
     postsContainer.append(...postsHtml);

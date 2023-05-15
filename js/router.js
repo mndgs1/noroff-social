@@ -10,24 +10,17 @@ export default function router() {
     switch (path) {
         case "/":
         case "/index.html":
-            window.location.href = "/profile/login/index.html";
-            break;
-        case "/profile/login/index.html":
             pages.loginPage();
             break;
-
         case "/feed/index.html":
         case "/feed/":
-            pages.homePage();
+            pages.feedPage();
             break;
         case "/admin/posts/create.html":
             pages.postCreatePage();
             break;
         case "/admin/posts/edit.html":
             pages.postEditPage();
-            break;
-        case "/feed/myPosts.html":
-            pages.myPostsPage();
             break;
         default:
             pages.notFoundPage();

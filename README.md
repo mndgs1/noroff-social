@@ -31,8 +31,8 @@ The following user stories are required for a passing submission:
     User can search the post content feed  +-
     User can view a post content item by ID +-
     User can create a post content item +
-    User can update a post content item
-    User can delete a post content item
+    User can update a post content item+
+    User can delete a post content item+
 
 Additional features
 
