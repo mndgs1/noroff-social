@@ -22,6 +22,12 @@ export default function router() {
         case "/admin/posts/edit.html":
             pages.postEditPage();
             break;
+        case "/feed/post.html":
+            pages.postPage();
+            break;
+        case "/feed/myPosts.html":
+            pages.myPostsPage();
+            break;
         default:
             pages.notFoundPage();
     }
