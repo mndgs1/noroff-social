@@ -6,4 +6,5 @@ export async function loginPage() {
     checkValidity();
     loginListener();
     setAuthenticationFormListener("registerForm", "register");
+    setAuthenticationFormListener("loginForm", "login");
 }
